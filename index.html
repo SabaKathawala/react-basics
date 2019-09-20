@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React in Script tag</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+<body>
+
+    <div id="app"></div>
+
+    <script type="text/babel">
+        class App extends React.Component {
+            render() {
+                return (
+                    <div className="app-content">
+                        <h1>Writing your first React Component</h1>
+                        <div className="content">
+                            <h2>React things</h2>
+                            <ul>
+                                <li>Include these JS Files
+                                    <ul>
+                                        <li><strong>react.development.js</strong>: the core React  </li>
+                                        <li><strong>react-dom.development.js</strong>: ReactDOM. To access and modify DOM</li>
+                                    </ul>
+                                </li>
+                                <li>Create a class extending React.Component</li>
+                                <li>You inherit render() !!!!</li>
+                                <li>All your content goes into <strong>render()</strong></li>
+                                <li>Don't forget you can have <strong>ONLY one root</strong> element in render()</li>
+                                <li>render() must return HTML</li>
+                                <li>Use ReactDOM to render your component</li>
+                            </ul>
+                            <div>
+                                <h2>What is JSX: JavaScript as XML</h2>
+                                <ul>
+                                    <li>render() can use JSX to write HTML</li>
+                                    <li>JSX is not supported by Browsers!!! </li>
+                                    <li>You need Babel to transpile JSX for the browser to understand</li>
+                                    <li>Get <strong>babel.min.js</strong></li>
+                                    <li>Use <strong>type="text/babel"</strong> in your script tag</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('app'));
+    </script>
+
+</body>
+</html>
